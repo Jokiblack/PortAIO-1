@@ -4,6 +4,7 @@ using System.Linq;
 using EloBuddy;
 using EloBuddy.SDK;
 using SharpDX;
+using iKalistaReborn.Utils;
 
 namespace iKalistaReborn
 {
@@ -32,7 +33,7 @@ namespace iKalistaReborn
             {
                 if (Player.Instance.Distance(spot[0]) <= 4)
                 {
-                    Spells.Q.Cast(spot[1]);
+                    SpellManager.Spell[SpellSlot.Q].Cast(spot[1]);
                     Player.IssueOrder(GameObjectOrder.MoveTo, spot[1]);
                     _lastMoveClick = Environment.TickCount;
                     _jumped = true;
