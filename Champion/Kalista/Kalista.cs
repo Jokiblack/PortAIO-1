@@ -53,6 +53,7 @@ namespace iKalistaReborn
             CreateMenu();
             SentinelManager.Initialize();
             LoadModules();
+            if (Game.MapId == GameMapId.SummonersRift) WallJump.InitSpots();
             Game.OnUpdate += OnUpdate;
             Drawing.OnDraw += OnDraw;
             Obj_AI_Base.OnProcessSpellCast += OnProcessSpell;
@@ -182,6 +183,7 @@ namespace iKalistaReborn
             drawingMenu.Add("com.ikalista.drawing.spellRanges", new CheckBox("Draw Spell Ranges"));
             drawingMenu.Add("com.ikalista.drawing.eDamage", new CheckBox("Draw E Damage"));//.SetValue(new Circle(true, Color.DarkOliveGreen)));
             drawingMenu.Add("com.ikalista.drawing.damagePercent", new CheckBox("Draw Percent Damage"));//.SetValue(new Circle(true, Color.DarkOliveGreen)));
+            drawingMenu.Add("draw.jumpSpots", new CheckBox("Draw jump spots", true));
         }
 
 
@@ -415,6 +417,14 @@ namespace iKalistaReborn
                     return;
 
                 var siegeMinion = minions.FirstOrDefault(x => x.Name.Contains("siege") && x.IsRendKillable());
+
+            if (Config.DrawMenu.IsChecked("draw.jumpSpots"))
+            {
+                foreach (var spot in WallJump.JumpSpots.Where(s => Player.Instance.Distance(s[0]) <= 2000))
+                {
+                    Circle.Draw(Color.DarkGray, 30f, spot[0]);
+                }
+            }
 
                 if (getCheckBoxItem(laneclearMenu, "com.ikalista.laneclear.eSiege") && siegeMinion != null)
                 {
