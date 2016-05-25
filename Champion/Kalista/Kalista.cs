@@ -418,11 +418,11 @@ namespace iKalistaReborn
 
                 var siegeMinion = minions.FirstOrDefault(x => x.Name.Contains("siege") && x.IsRendKillable());
 
-            if (Config.DrawMenu.IsChecked("draw.jumpSpots"))
+            if (getCheckBoxItem(drawingMenu, "draw.jumpSpots"))
             {
                 foreach (var spot in WallJump.JumpSpots.Where(s => Player.Instance.Distance(s[0]) <= 2000))
                 {
-                    Circle.Draw(Color.DarkGray, 30f, spot[0]);
+                    Render.Circle.DrawCircle(spot[0], 30f, Color.DarkGray);
                 }
             }
 
