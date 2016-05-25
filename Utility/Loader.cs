@@ -376,11 +376,11 @@ namespace PortAIO.Utility
             Miscc.Add("champ", new CheckBox("Champ only mode? (No utils will load)", false));
             Miscc.Add("util", new CheckBox("Util only mode? (No champs will load)", false));
             Miscc.AddSeparator();
-            Miscc.Add("activator", new CheckBox("Enable ElUtilitySuite?"));
-            Miscc.Add("tracker", new CheckBox("Enable NabbTracker?"));
-            Miscc.Add("recall", new CheckBox("Enable Recall Tracker?"));
+            Miscc.Add("activator", new CheckBox("Enable ElUtilitySuite?", true));
+            Miscc.Add("tracker", new CheckBox("Enable NabbTracker?", false));
+            Miscc.Add("recall", new CheckBox("Enable Recall Tracker?", false));
             Miscc.AddSeparator();
-            Miscc.Add("skin", new CheckBox("Enable Skin Hack?"));
+            Miscc.Add("skin", new CheckBox("Enable Skin Hack?", false));
             Miscc.Add("evade", new CheckBox("Enable Evade?", false));
             Miscc.Add("godTracker", new CheckBox("Enable God Jungle Tracker?", false));
             Miscc.AddSeparator();
