@@ -385,7 +385,7 @@ namespace PortAIO.Utility
             Miscc.Add("godTracker", new CheckBox("Enable God Jungle Tracker?", false));
             Miscc.AddSeparator();
             Miscc.Add("ping", new CheckBox("Enable Ping Block?", false));
-            Miscc.Add("human", new CheckBox("Enable Humanizer?", false));
+            Miscc.Add("human", new CheckBox("Enable Humanizer?", true));
             Miscc.Add("gank", new CheckBox("Enable GankAlerter?", false));
             Miscc.AddSeparator();
             Miscc.Add("cheat", new CheckBox("Enable TheCheater?", false));
