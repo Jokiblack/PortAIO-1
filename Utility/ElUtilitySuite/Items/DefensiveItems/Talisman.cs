@@ -50,7 +50,7 @@
         {
             this.Menu.AddGroupLabel(Name);
             this.Menu.Add("UseTalismanCombo", new CheckBox("Activated"));
-            this.Menu.Add("ModeTALIS", new ComboBox("Activation mode: ", 1, "Use always", "Use in combo"));
+            this.Menu.Add("Mode-talisman", new ComboBox("Activation mode: ", 1, "Use always", "Use in combo"));
             this.Menu.Add("TalismanEnemyHp", new Slider("Use on Enemy Hp %", 70));
             this.Menu.Add("TalismanMyHp", new Slider("Use on My Hp %", 50));
             this.Menu.AddSeparator();
@@ -75,7 +75,7 @@
         /// </summary>
         public override void UseItem()
         {
-            if (getBoxItem(this.Menu, "ModeTALIS") == 1 && !this.ComboModeActive)
+            if (getBoxItem(this.Menu, "Mode-talisman") == 1 && !this.ComboModeActive)
             {
                 return;
             }
